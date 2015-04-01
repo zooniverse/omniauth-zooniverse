@@ -6,11 +6,11 @@ require 'omniauth/zooniverse/version'
 Gem::Specification.new do |spec|
   spec.name          = "omniauth-zooniverse"
   spec.version       = Omniauth::Zooniverse::VERSION
-  spec.authors       = ["Stuart"]
+  spec.authors       = ["Stuart Lynn"]
   spec.email         = ["stuart@zooniverse.org"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Provides an OAuth2.0 strategy for the zooniverse}
+  spec.description   = %q{Allows thrid parties to authenticate against and access resources on the zooniverse platform}
+  spec.homepage      = "https://github.com/zooniverse/omniauth-zooniverse"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
