@@ -10,7 +10,7 @@ module OmniAuth
       DEFAULT_SCOPE = "user,public"
 
       option :client_options, {
-        :site => "https://panoptes-staging.zooniverse.org",
+        :site => "https://panoptes.zooniverse.org",
         :authorize_url => "/oauth/authorize",
         :scope => "user, public"
       }
