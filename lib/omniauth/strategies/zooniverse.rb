@@ -12,7 +12,7 @@ module OmniAuth
       option :client_options, {
         :site => "https://panoptes.zooniverse.org",
         :authorize_url => "/oauth/authorize",
-        :scope => "user, public"
+        :scope => DEFAULT_SCOPE
       }
 
       uid { raw_info["id"] }
@@ -36,14 +36,20 @@ module OmniAuth
       info do
         {
           :email => raw_info["email"],
-          :name  => raw_info["display_name"]
+          :name  => raw_info["display_name"],
+          :zooniverse_id  => raw_info["zooniverse_id"]
         }
       end
 
 
       def raw_info
-        raw = JSON.parse(access_token.get('/api/me', headers: {'Accept' => "application/vnd.api+json; version=1"}).body)
-        @raw_info ||= raw["users"][0]
+        return @raw_info if @raw_info
+        token_response = access_token.get(
+          '/api/me',
+          headers: {'Accept' => "application/vnd.api+json; version=1"}
+        )
+        raw = JSON.parse(token_response.body)
+        @raw_info = raw["users"][0]
       end
     end
   end

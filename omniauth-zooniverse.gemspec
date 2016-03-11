@@ -4,6 +4,10 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'omniauth/zooniverse/version'
 
 Gem::Specification.new do |spec|
+  # https://github.com/intridea/omniauth-oauth2/issues/81
+  # 1.4.0 has a bug that prevents login
+  spec.add_dependency "omniauth-oauth2", "1.3.1"
+
   spec.name          = "omniauth-zooniverse"
   spec.version       = Omniauth::Zooniverse::VERSION
   spec.authors       = ["Stuart Lynn"]
