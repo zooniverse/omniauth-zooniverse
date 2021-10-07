@@ -34,6 +34,20 @@ end
 
 Refer to the docs for more information on how to use omniauth in your app, https://github.com/intridea/omniauth#integrating-omniauth-into-your-application
 
+## Development
+
+Use docker & compose to setup the dev env
+
+```shell
+$ docker-compose build
+```
+
+Run a bash shell inside the new container
+
+```shell
+$ docker-compose run --service-ports --rm -e omniauth-zooniverse bash
+```
+
 ## Contributing
 
 1. Fork it ( http://github.com/<my-github-username>/omniauth-zooniverse/fork )
